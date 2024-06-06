@@ -1,0 +1,70 @@
+body {
+ background-image: url('background.jpg');
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+label, input, textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+    body {
+        background-size: cover; /* or contain based on preference */
+    }
+}
+
+/* Media query for tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        background-size: cover; /* or contain based on preference */
+    }
+}
+
+/* Media query for 720p resolution desktops */
+@media (min-width: 1024px) and (max-width: 1280px) {
+    body {
+        background-size: cover; /* or contain based on preference */
+    }
+}
