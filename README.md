@@ -2,6 +2,17 @@
 # LINKS
 - Demo video url : https://www.youtube.com/watch?v=ziR1XVthARo
 - Web app url : https://white-tree-0e5d6a400.5.azurestaticapps.net/
+<p>.</p>
+<p>.</p>
+
+
+
+https://github.com/true-immortal/HopeSent/assets/154999228/3821ab92-8c90-4baa-be14-ef412fabcabe
+
+
+
+  <p>.</p>
+<p>.</p>
 # HopeSent
 - An AI-Driven Sentiment Analysis and Support System.
 
