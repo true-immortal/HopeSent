@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+    .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgb(68, 168, 163);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background-color: rgb(50, 140, 135);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/background.jpg');
+            background-size: cover; /* Ensures the background image covers the entire element */
+    background-position: center;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .content {
+            margin: 20px 0;
+        }
+        .text, .sentiment {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #e8f0fe;
+            color: #333;
+        }
+        .sentiment.positive {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .sentiment.negative {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .sentiment.neutral {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis Result</h1>
+        <div class="content">
+            <div class="text">
+                <strong>Transcribed Text:</strong>
+                <p>{{ text }}</p>
+            </div>
+            <div class="sentiment {{ sentiment }}">
+                <strong>Sentiment:</strong>
+                <p>{{ sentiment.capitalize() }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

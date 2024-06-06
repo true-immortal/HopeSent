@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgb(68, 168, 163);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background-color: rgb(50, 140, 135);
+        }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('/static/pexels-pixabay-40568.jpg');
+
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  opacity: 0.95;
+}
+
+.content {
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  max-width: 90%;
+  text-align: center;
+  background-color:rgb(255, 255, 255);
+  background: linear-gradient(rgb(181, 219, 255),rgb(114, 187, 255));
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+input{
+	width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Media query for devices with a width up to 1280px */
+@media (max-width: 1280px) {
+  body {
+    background-size: contain; /* Scales the image to be fully visible within the container */
+  }
+}
+
+/* Media query for devices with a width up to 1024px */
+@media (max-width: 1024px) {
+  body {
+    background-size: contain; /* Adjust based on the requirement, can also use cover */
+  }
+}
+
+/* Media query for devices with a width up to 768px */
+@media (max-width: 768px) {
+  body {
+    background-size: contain; /* Ensures the image is visible within the smaller container */
+  }
+}
+
+/* Media query for devices with a width up to 480px */
+@media (max-width: 480px) {
+  body {
+    background-size: contain; /* Scales down further for small devices */
+  }}
+</style>
+</head>
+<body>
+     <a href="https://white-tree-0e5d6a400.5.azurestaticapps.net" class="back-button">&#8592; Back</a>
+<div class="container">
+  <div class="content">
+    <h1>Talk to Us</h1>
+    <form action="/submit_contact" method="POST">
+      <input type="name" name='name' placeholder="Name" required>
+      <input type="email" name='email' placeholder="E-mail" required>
+      <textarea placeholder="Message" name="message" required></textarea>
+      <button type="submit">Send message</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

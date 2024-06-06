@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Results</title>
+    <style>
+    .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgb(68, 168, 163);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background-color: rgb(50, 140, 135);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+     <a href="https://white-tree-0e5d6a400.5.azurestaticapps.net" class="back-button">&#8592; Back</a>
+    <div class="container">
+        <h1>Test Results</h1>
+        <p>Your Score: {{ score }}</p>
+        <p>{{ description }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHQ-9 Questionnaire</title>
+    <style>
+    .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgb(68, 168, 163);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background-color: rgb(50, 140, 135);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .card h2 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: #007BFF;
+        }
+        .options label {
+            display: block;
+            margin: 10px 0;
+        }
+        .submit-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px 0;
+            display: block;
+            text-align: center;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+     <a href="https://white-tree-0e5d6a400.5.azurestaticapps.net" class="back-button">&#8592; Back</a>
+    <div class="container">
+        <h1>PHQ-9 Questionnaire</h1>
+        <form id="phq9">
+            <div class="card">
+                <h2>1. Little interest or pleasure in doing things:</h2>
+                <div class="options">
+                    <label><input type="radio" name="phq9_q1" value="0"> Not at all</label>
+                    <label><input type="radio" name="phq9_q1" value="1"> Several days</label>
+                    <label><input type="radio" name="phq9_q1" value="2"> More than half the days</label>
+                    <label><input type="radio" name="phq9_q1" value="3"> Nearly every day</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>2. Feeling down, depressed, or hopeless:</h2>
+                <div class="options">
+                    <label><input type="radio" name="phq9_q2" value="0"> Not at all</label>
+                    <label><input type="radio" name="phq9_q2" value="1"> Several days</label>
+                    <label><input type="radio" name="phq9_q2" value="2"> More than half the days</label>
+                    <label><input type="radio" name="phq9_q2" value="3"> Nearly every day</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>3. Trouble falling or staying asleep, or sleeping too much:</h2>
+                <div class="options">
+                    <label><input type="radio" name="phq9_q3" value="0"> Not at all</label>
+                    <label><input type="radio" name="phq9_q3" value="1"> Several days</label>
+                    <label><input type="radio" name="phq9_q3" value="2"> More than half the days</label>
+                    <label><input type="radio" name="phq9_q3" value="3"> Nearly every day</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>4. Feeling tired or having little energy:</h2>
+                <div class="options">
+                    <label><input type="radio" name="phq9_q4" value="0"> Not at all</label>
+                    <label><input type="radio" name="phq9_q4" value="1"> Several days</label>
+                    <label><input type="radio" name="phq9_q4" value="2"> More than half the days</label>
+                    <label><input type="radio" name="phq9_q4" value="3"> Nearly every day</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>5. Poor appetite or overeating:</h2>
+                <div class="options">
+                    <label><input type="radio" name="phq9_q5" value="0"> Not at all</label>
+                    <label><input type="radio" name="phq9_q5" value="1"> Several days</label>
+                    <label><input type="radio" name="phq9_q5" value="2"> More than half the days</label>
+                    <label><input type="radio" name="phq9_q5" value="3"> Nearly every day</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>6. Feeling bad about yourself — or that you are a failure or have let yourself or your family down:</h2>
+                <div class="options">
+                    <label><input type="radio" name="phq9_q6" value="0"> Not at all</label>
+                    <label><input type="radio" name="phq9_q6" value="1"> Several days</label>
+                    <label><input type="radio" name="phq9_q6" value="2"> More than half the days</label>
+                    <label><input type="radio" name="phq9_q6" value="3"> Nearly every day</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>7. Trouble concentrating on things, such as reading the newspaper or watching television:</h2>
+                <div class="options">
+                    <label><input type="radio" name="phq9_q7" value="0"> Not at all</label>
+                    <label><input type="radio" name="phq9_q7" value="1"> Several days</label>
+                    <label><input type="radio" name="phq9_q7" value="2"> More than half the days</label>
+                    <label><input type="radio" name="phq9_q7" value="3"> Nearly every day</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>8. Moving or speaking so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual:</h2>
+                <div class="options">
+                    <label><input type="radio" name="phq9_q8" value="0"> Not at all</label>
+                    <label><input type="radio" name="phq9_q8" value="1"> Several days</label>
+                    <label><input type="radio" name="phq9_q8" value="2"> More than half the days</label>
+                    <label><input type="radio" name="phq9_q8" value="3"> Nearly every day</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>9. Thoughts that you would be better off dead, or thoughts of hurting yourself in some way:</h2>
+                <div class="options">
+                    <label><input type="radio" name="phq9_q9" value="0"> Not at all</label>
+                    <label><input type="radio" name="phq9_q9" value="1"> Several days</label>
+                    <label><input type="radio" name="phq9_q9" value="2"> More than half the days</label>
+                    <label><input type="radio" name="phq9_q9" value="3"> Nearly every day</label>
+                </div>
+            </div>
+
+            <!-- Add similar cards for the remaining questions -->
+            <button type="button" class="submit-btn" onclick="submitTest('phq9')">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function submitTest(questionnaire) {
+            const form = document.getElementById(questionnaire);
+            const formData = new FormData(form);
+            const data = { questionnaire: questionnaire }; // Include questionnaire name
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            fetch('/submit_screening', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                window.location.href = `/screening?score=${result.score}&description=${encodeURIComponent(result.description)}`;
+            })
+            .catch(error => {
+                console.error('Error submitting screening:', error);
+                alert('There was an error submitting your screening.');
+            });
+        }
+    </script>
+</body>
+</html>

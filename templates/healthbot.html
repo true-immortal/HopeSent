@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Bot</title>
+    <!-- <link rel="stylesheet" href="/static/index.css"/> -->
+    <style>
+    .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgb(68, 168, 163);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background-color: rgb(50, 140, 135);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('/static/healthbot.jpg');
+
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+        }
+
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+        .container {
+            opacity: 0.9;
+            width: 80%;
+             /* Adjust container width for responsiveness */
+            max-width: 800px; /* Set a max-width to avoid stretching on large screens */
+            padding: 20px;
+            background-color: teal;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1, h3 {
+            color: #333;
+        }
+        #webchat {
+            height: 300px; /* Adjust chat height for responsiveness */
+            width: 100%; /* Adjust chat width for responsiveness */
+            border: 1px solid;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+  body {
+    background-size: contain; /* Ensures the image is visible within the smaller container */
+  }
+}
+
+/* Media query for devices with a width up to 480px */
+@media (max-width: 480px) {
+  body {
+    background-size: contain; /* Scales down further for small devices */
+  }
+}
+
+/* Media query for devices with a width up to 320px */
+@media (max-width: 320px) {
+  body {
+    background-size: contain; /* Ensures the image is still visible on very small devices */
+  }
+}
+
+    </style>
+</head>
+<body>
+     <a href="https://white-tree-0e5d6a400.5.azurestaticapps.net" class="back-button">&#8592; Back</a>
+    <div class="container">
+        <h1>HopeSent</h1>
+        <h3>Health Bot</h3>
+        <div id="webchat"></div>
+    </div>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <script>
+        const styleOptions = {
+            botAvatarImage: 'https://healthbot.azurewebsites.net/images/bot-avatar.png',
+            botAvatarInitials: 'HS',
+            userAvatarInitials: 'You',
+        };
+
+        window.WebChat.renderWebChat(
+            {
+                directLine: window.WebChat.createDirectLine({
+                    secret: 'ELOuQSQfmKs.mibdCoNkW1E0p5wppRTj-5nFt5Bg4q2FmoEflfvc_y4' // Replace with your Direct Line Secret
+                }),
+                styleOptions
+            },
+            document.getElementById('webchat')
+        );
+    </script>
+</body>
+</html>

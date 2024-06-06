@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>.back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgb(68, 168, 163);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background-color: rgb(50, 140, 135);
+        }</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Success</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+     <a href="https://white-tree-0e5d6a400.5.azurestaticapps.net" class="back-button">&#8592; Back</a>
+    <br><br>
+    <h1>Contact Successful</h1>
+    <p>Thank you, {{ name }}. Your message has been sent successfully.</p>
+</body>
+</html>

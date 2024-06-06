@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Screening</title>
+    <style>
+    .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgb(68, 168, 163);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background-color: rgb(50, 140, 135);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1 1 300px;
+            max-width: 45%;
+            min-width: 300px;
+            position: relative;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #007BFF;
+        }
+        .card p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+     <a href="https://white-tree-0e5d6a400.5.azurestaticapps.net" class="back-button">&#8592; Back</a>
+    <div class="container">
+        <h1>Mental Health Screening</h1>
+        <div class="flex-container">
+            <div class="card" onclick="location.href='/phq15'">
+                <h2>PHQ-15</h2>
+                <p>The PHQ-15 is a questionnaire used to assess somatic symptoms and screen for somatization disorders.</p>
+            </div>
+            <div class="card" onclick="location.href='/phq9'">
+                <h2>PHQ-9</h2>
+                <p>The PHQ-9 is a multipurpose instrument for screening, diagnosing, monitoring, and measuring the severity of depression.</p>
+            </div>
+            <div class="card" onclick="location.href='/gad7'">
+                <h2>GAD-7</h2>
+                <p>The GAD-7 is a brief measure for assessing generalized anxiety disorder.</p>
+            </div>
+            <div class="card" onclick="location.href='/anxiety_attack'">
+                <h2>Anxiety Attack</h2>
+                <p>This questionnaire is designed to help you assess if you might be suffering from anxiety attacks.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

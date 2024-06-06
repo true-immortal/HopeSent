@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Conversation & Sentiment Analysis</title>
+    <style>
+    .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgb(68, 168, 163);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background-color: rgb(50, 140, 135);
+        }
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('../static/background.jpg');
+             background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+            color: #444444;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Container Styles */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            gap: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Card Styles */
+        .card {
+            flex: 1;
+            padding: 20px;
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Header Styles */
+        h1, h2 {
+            color: rgb(68, 168, 163);
+            margin-bottom: 20px;
+        }
+
+        /* Button Styles */
+        button {
+            background-color: rgb(68, 168, 163);
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: rgb(50, 140, 135);
+        }
+
+        /* Textarea Styles */
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #cccccc;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            margin-top: 10px;
+            resize: vertical;
+            overflow-y: auto;
+        }
+
+        /* Transcription Styles */
+        #transcription {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        /* Hover Effects */
+        .card:first-child:hover ~ body {
+            background-color: rgba(68, 168, 163, 0.5);
+            background-image: linear-gradient(to right, rgba(68, 168, 163, 0.5) 50%, #e8f5f6 50%);
+        }
+
+        .card:last-child:hover ~ body {
+            background-color: rgba(68, 168, 163, 0.5);
+            background-image: linear-gradient(to left, rgba(68, 168, 163, 0.5) 50%, #e8f5f6 50%);
+        }
+
+        @media (max-width: 768px) {
+  body {
+    background-size: contain; /* Ensures the image is visible within the smaller container */
+  }
+}
+
+/* Media query for devices with a width up to 480px */
+@media (max-width: 480px) {
+  body {
+    background-size: contain; /* Scales down further for small devices */
+  }
+}
+
+/* Media query for devices with a width up to 320px */
+@media (max-width: 320px) {
+  body {
+    background-size: contain; /* Ensures the image is still visible on very small devices */
+  }
+}
+    </style>
+</head>
+<body>
+     <a href="https://white-tree-0e5d6a400.5.azurestaticapps.net" class="back-button">&#8592; Back</a>
+    <div class="container">
+        <div class="card">
+            <h1>Record Your Conversation</h1>
+            <button id="transcribeButton">Transcribe Audio</button>
+            <p id="transcription">Your transcription will appear here.</p>
+        </div>
+        <div class="card">
+            <h2>Enter Text Manually for Sentiment Analysis</h2>
+            <textarea id="manualText" rows="4" placeholder="Enter your text here..."></textarea>
+            <button id="analyzeTextButton">Analyze Text</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('transcribeButton').addEventListener('click', transcribeAudio);
+        document.getElementById('analyzeTextButton').addEventListener('click', analyzeText);
+
+        function transcribeAudio() {
+            fetch('/transcribe_audio', {
+                method: 'GET'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    window.location.href = '/sentiment';
+                    throw new Error('Failed to transcribe audio');
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('transcription').innerText = data.text;
+                window.location.href = '/sentiment';
+            })
+            .catch(error => {
+                window.location.href = '/sentiment';
+                console.error('Error transcribing audio:', error);
+                document.getElementById('transcription').innerText = 'Error: Failed to transcribe audio. The Website is unable to access your microphone either due to antivirus or browser blocking it.';
+            });
+        }
+
+        function analyzeText() {
+            const text = document.getElementById('manualText').value;
+            fetch('/analyze_text', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: text })
+            })
+            .then(response => response.json())
+            .then(data => {
+                window.location.href = '/sentiment';
+            })
+            .catch(error => {
+                console.error('Error analyzing text:', error);
+            });
+        }
+    </script>
+</body>
+</html>
+```
