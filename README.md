@@ -1,4 +1,7 @@
 # FUTURE READY TALENT INTERNSHIP 2024
+# LINKS
+- Demo video url : https://www.youtube.com/watch?v=ziR1XVthARo
+- Web app url : https://white-tree-0e5d6a400.5.azurestaticapps.net/
 # HopeSent
 - An AI-Driven Sentiment Analysis and Support System.
 
@@ -42,8 +45,6 @@ The application provides immediate guidance on steps to take based on the screen
 - Flask: Powers the backend of the application, handling requests, performing sentiment analysis, and orchestrating interactions with Azure Cognitive Services and Speech Services
 
 # Website URL
-
-https://white-tree-0e5d6a400.5.azurestaticapps.net/
 
   # WebApp Screenshots
 
