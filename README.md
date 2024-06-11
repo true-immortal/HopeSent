@@ -1,20 +1,9 @@
 # FUTURE READY TALENT INTERNSHIP 2024
 # LINKS
-- Demo video url : https://www.youtube.com/watch?v=ziR1XVthARo
+- Demo video url : 
 - Web app url : https://white-tree-0e5d6a400.5.azurestaticapps.net/
 <p>.</p>
 <p>.</p>
-
-
-
-
-
-https://github.com/true-immortal/HopeSent/assets/154999228/e9308ef6-e8dc-4abb-b378-554e3d656a7b
-
-
-
-
-
   <p>.</p>
 <p>.</p>
 # HopeSent
